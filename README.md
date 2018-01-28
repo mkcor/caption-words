@@ -6,26 +6,33 @@ This module lets you find the tf-idf of words in a web page
 The idea is to find the words that most represent the content of this page
 wrt to a general use of the language (here, English).
 
-## Dependencies
-`pip install` the following:
-```
-beautifulsoup4==4.3.2
-nltk==3.0.2
-```
-Then download `nltk` data:
-```
-$ sudo python -m nltk.downloader -d /usr/share/nltk_data all
-```
+## Setup
 
-## Running
-You can run `term_frequency.py` as a standalone script:
-```
-python3 term_frequency.py
-```
+    $ virtualenv --python=python3.6 ~/.virtualenv/caption-words
+    $ source ~/.virtualenv/caption-words/bin/activate
+    $ pip install -r requirements.txt
+    $ deactivate
 
 ## Data
+
+Download `nltk` data into a system-wide directory:
+
+    $ sudo python -m nltk.downloader -d /usr/share/nltk_data all
+
 Input files are provided for convenience.
+
 ### Frequency Word Lists
 [https://invokeit.wordpress.com/frequency-word-lists/](https://invokeit.wordpress.com/frequency-word-lists/)
+
+    $ unzip en-2012.zip
+
 ### Test file
-Page [https://docs.python.org/3/](https://docs.python.org/3/)
+
+File `test.html` is page [https://docs.python.org/3/](https://docs.python.org/3/).
+
+## Running
+
+You can run `term_frequency.py` as a standalone script:
+
+    $ source ~/.virtualenv/caption-words/bin/activate
+    $ python term_frequency.py
